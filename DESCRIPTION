@@ -1,0 +1,12 @@
+Package: fahp
+Type: Package
+Title: Factor augmented hurdle Poisson inverse model
+Version: 0.1.0
+Author: Zhijing Wang
+Maintainer: Zhijing Wang <wangzhijing@sjtu.edu.cn>
+Description: This method can conduct supervised dimensionality reduction on high dimensional count data containing a large number of zeros
+License: GPL-2
+Encoding: UTF-8
+Depends: GFM,irlba,parallel,foreach,doParallel
+LazyData: true
+RoxygenNote: 7.3.2
