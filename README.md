@@ -10,11 +10,7 @@ library(fahp)
 
 # Usage
 ```r
-n=50
-p=20
-x=matrix(rpois(n*p,lambda = 1),ncol = p)
-y=rnorm(n)
-fahp(x,y,q=1,maxit = 30,para = 10)
+fahp(zipdata, y, q = 2, maxit = 300, constraint = 5, para = 0)
 ```
 * zipdata: Observation matrix, commonly characterized by zero inflation.
 * y: A response vector with dimension equal to the number of rows in zipdata.
@@ -25,9 +21,19 @@ fahp(x,y,q=1,maxit = 30,para = 10)
 
 
 # Value
-* The estimator results.
-* \item{FA}{Factor score matrix.}
-* \item{mu1}{The intercept vector for hurdle part}
-* \item{mu2}{The intercept vector for positive count part}
-* \item{t}{Number of iterations}
-* \item{obj}{The loglikelihhod results (omitting the constant), which can be used for model selection}
+The estimator results.
+* FA: Factor score matrix.
+* mu1: The intercept vector for hurdle part.
+* mu2: The intercept vector for positive count part.
+* t: Number of iterations.
+* obj: The loglikelihhod results (omitting the constant), which can be used for model selection.
+
+
+# Example
+```r
+n=50
+p=20
+x=matrix(rpois(n*p,lambda = 1),ncol = p)
+y=rnorm(n)
+fahp(x,y,q=1,maxit = 30,para = 10)
+```
